@@ -1,6 +1,9 @@
 
 var app = angular.module('starter', ['starter.controllers','starter.services', 'ngRoute']);
 
+
+app.factory('authInterceptor','starter.services.authInterceptor');
+
 // app config
 app.config(['$routeProvider', function($routeProvider){
 
@@ -26,8 +29,13 @@ app.config(['$routeProvider', function($routeProvider){
 		controller: 'HomeCtrl'
 	})
 
-	.when('/login', {
-		templateUrl: 'assets/templates/login.html',
+	.when('/signin', {
+		templateUrl: 'assets/templates/signin.html',
+		controller: 'HomeCtrl'
+	})
+
+	.when('/signup', {
+		templateUrl: 'assets/templates/signup.html',
 		controller: 'HomeCtrl'
 	})
 
