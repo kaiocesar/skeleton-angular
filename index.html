@@ -2,26 +2,30 @@
 <html ng-app="starter">
   <head>
     <title>My Angular App</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" media="screen" >
+
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <script src="https://code.angularjs.org/1.5.8/angular-resource.min.js"></script>
-    <script type="text/javascript" src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>
-    
-    <script type="text/javascript" src="assets/js/app.js"></script>
-    <script type="text/javascript" src="assets/js/controllers.js"></script>
-    <script type="text/javascript" src="assets/js/services.js"></script>
+    <script src="https://code.angularjs.org/1.5.8/angular-route.min.js"></script>
+
+    <script src="assets/js/app.js"></script>
+    <script src="assets/js/controllers.js"></script>
+    <script src="assets/js/services.js"></script>
 
   </head>
   <body>
+    <div class="container">
+    	<ul class="nav nav-tabs">
+    		<li><a href="#/home">home</a></li>
+    		<li><a href="#/about">about</a></li>
+    		<li><a href="#/contacts">contacts</a></li>
+    	</ul>
 
-  		<ul>
-  			<li><a href="#/home">home</a></li>
-  			<li><a href="#/about">about</a></li>
-  			<li><a href="#/contacts">contacts</a></li>
-  		</ul>
+      <div ng-view></div>
 
-	  <div ng-view>
-	  	
-	  </div>
+    </div>
+    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
 
   </body>
 </html>

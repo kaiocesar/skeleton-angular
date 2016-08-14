@@ -2,16 +2,22 @@ var appCtrl = angular.module('starter.controllers', []);
 
 appCtrl.controller('HomeCtrl', ['$scope','$http', function($scope, $http){
 	$scope.data = {};
+	$scope.showError = false;
+	$scope.messageError = '';
 
 	$scope.SendMessage = function(){
 		$http({
-			method: 'GET', 
-			url: 'send-contact.html'
+			method: 'GET',
+			url: 'http://api.mangoweb.com.br/api.php'
 		})
 		.then(function(response){
-			console.log(response);
+				if(response.data) {
+					$scope.showError = true;
+					$scope.messageError = 'Erro no envio 200';
+				}
 		}, function(response){
-			console.log('Request failed...');
+			$scope.showError = true;
+			$scope.messageError = 'Request failed';
 		});
 	};
 }]);

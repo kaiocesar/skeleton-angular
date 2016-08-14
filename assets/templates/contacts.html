@@ -1,7 +1,15 @@
 <div ng-controller="HomeCtrl">
-	<h1>Contacts</h1>
 
-	<form>
+	<div class="page-header">
+		<h1>Contacts</h1>
+	</div>
+
+	<div class="alert alert-danger" role="alert" ng-show="showError">
+  	<a href="#" class="alert-link">{{messageError}}</a>
+	</div>
+
+
+	<form class="form">
 		<div class="form-group">
 			<label>Your name:</label>
 			<input type="text" ng-model="data.name" class="form-control" />
@@ -14,6 +22,7 @@
 			<label>Message:</label>
 			<textarea class="form-control" ng-model="data.message"></textarea>
 		</div>
-		<button class="btn" ng-click="SendMessage()">Send a message</button>
+		<button class="btn btn-primary btn-lg pull-right" ng-click="SendMessage()">Send a message</button>
 	</form>
+
 </div>
